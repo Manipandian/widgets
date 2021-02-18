@@ -6,16 +6,16 @@ const Header = () => {
 
     return (
         <div className="ui secondary pointing menu">
-            <Link href="/" className="item">
+            <Link href="/widgets" className="item">
                 Accordion
             </Link>
-            <Link href="/list" className="item">
+            <Link href="/widgets/list" className="item">
                 Search List
             </Link>
-            <Link href="/dropdown" className="item">
+            <Link href="/widgets/dropdown" className="item">
                 DropDown
             </Link>
-            <Link href="/translate" className="item">
+            <Link href="/widgets/translate" className="item">
                 Translate
             </Link>
         </div>

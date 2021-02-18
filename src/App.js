@@ -52,13 +52,13 @@ const App = () => {
     return (
         <div>
             <Header />
-            <Route path="/">
+            <Route path="/widgets">
                 <Accordion items={items}/>
             </Route>
-            <Route path="/list">
+            <Route path="/widgets/list">
                 <Search />
             </Route>
-            <Route path="/dropdown">
+            <Route path="/widgets/dropdown">
                 <DropDown 
                     options={options}
                     selected={selected}
@@ -66,7 +66,7 @@ const App = () => {
                     label="Select language"
                     />
             </Route>
-            <Route path="/translate">
+            <Route path="/widgets/translate">
                 <Translate />
             </Route>
         </div>
