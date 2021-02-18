@@ -1,5 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import Accordion from "./component/accordion";
+import Search from "./component/search";
+import DropDown from "./component/dropDown"
+import Translate from "./component/translate";
+import Route from "./component/router";
+import Header from "./component/header";
 
 
 const items = [
@@ -15,12 +20,55 @@ const items = [
         title: "What is purpose of front end framework?",
         content: "It avoid some boiler plate configurations which is common for all new projects. It simplify DOM access and state management for app. Provide simple structure to create reusable components and what not"
     }
+];
+
+const options = [
+    {
+        label: "African",
+        value: "af"
+    },
+    {
+        label: "Hindi",
+        value: "hi"
+    },
+    {
+        label: "French",
+        value: "fr"
+    },
+    {
+        label: "Chinese",
+        value: "zh-CN"
+    },
+    {
+        label: "Tamil",
+        value: "ta"
+    }
 ]
 
+
 const App = () => {
+    const[selected, setSelected] = useState(options[0]);
+
     return (
         <div>
-            <Accordion items={items}/>
+            <Header />
+            <Route path="/">
+                <Accordion items={items}/>
+            </Route>
+            <Route path="/list">
+                <Search />
+            </Route>
+            <Route path="/dropdown">
+                <DropDown 
+                    options={options}
+                    selected={selected}
+                    onSelectedChange={setSelected}
+                    label="Select language"
+                    />
+            </Route>
+            <Route path="/translate">
+                <Translate />
+            </Route>
         </div>
     )
 }
