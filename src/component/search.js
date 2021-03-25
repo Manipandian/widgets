@@ -32,7 +32,9 @@ const Search = () => {
             })
             setResults(data.query.search);
         }
-        search();
+        if(debounceTerm !== "") {
+            search();
+        }
     }, [debounceTerm])
 
 
